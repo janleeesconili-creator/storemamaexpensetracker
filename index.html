@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Store Mama Construction Finance</title>
+<style>
+:root{--g:#123d32;--g2:#246b57;--cream:#f5f2e9;--paper:#fffdf7;--ink:#202724;--muted:#6d7771;--line:#dde3dc;--mint:#dcefe6;--peach:#f7e7dc;--red:#b94b42}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:Arial,sans-serif}.app{min-height:100vh;display:grid;grid-template-columns:240px 1fr}
+aside{background:var(--g);color:white;padding:28px 20px;display:flex;flex-direction:column}.brand{display:flex;align-items:center;gap:11px;font-size:20px;font-weight:800;margin:0 7px 38px}.logo{width:40px;height:40px;border-radius:13px;background:#dff0b7;color:var(--g);display:grid;place-items:center}
+nav{display:grid;gap:7px}nav button{border:0;background:transparent;color:#bfd2ca;padding:13px;border-radius:12px;text-align:left;font-weight:700;cursor:pointer}nav button.active,nav button:hover{background:#ffffff1b;color:white}.project{margin-top:auto;border:1px solid #ffffff25;background:#ffffff0c;border-radius:16px;padding:16px}.project small{color:#a7c1b6}.project strong{display:block;margin:8px 0}
+main{padding:38px clamp(18px,4vw,56px) 70px;min-width:0}header{display:flex;justify-content:space-between;align-items:end;gap:18px;margin-bottom:28px}.eyebrow{font-size:11px;letter-spacing:.12em;color:var(--g2);font-weight:900;margin:0 0 7px}h1{font-size:clamp(30px,4vw,46px);letter-spacing:-.04em;margin:0}.sub{color:var(--muted);margin:8px 0 0}.actions{display:flex;gap:9px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer}.primary{background:var(--g);color:white}.secondary{background:var(--paper);color:var(--g);border:1px solid var(--line)}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-bottom:18px}.kpi{min-height:155px;border-radius:22px;padding:21px;background:var(--paper);box-shadow:0 12px 35px #24322b0c}.kpi.deposit{background:var(--mint)}.kpi.expense{background:var(--peach)}.kpi.balance{background:var(--g);color:white}.kpi small{font-size:11px;letter-spacing:.08em;font-weight:900}.kpi strong{display:block;font-size:clamp(28px,3vw,39px);letter-spacing:-.05em;margin:35px 0 6px}.kpi span{color:var(--muted);font-size:12px}.kpi.balance span{color:#c5d9d1}
+.grid{display:grid;grid-template-columns:1.6fr .8fr;gap:18px}.card{background:var(--paper);border-radius:22px;box-shadow:0 12px 35px #24322b0c;overflow:hidden}.cardhead{padding:22px 23px 15px;display:flex;justify-content:space-between;align-items:center}.cardhead h2{margin:0;font-size:20px}.cardhead span{font-size:12px;color:var(--muted)}.tablewrap{overflow:auto}table{border-collapse:collapse;width:100%;min-width:650px}th,td{padding:13px 22px;border-top:1px solid var(--line);text-align:left;font-size:13px}th{color:var(--muted);font-size:10px;letter-spacing:.08em}td:last-child{text-align:right;font-weight:900}.plus{color:var(--g2)}.minus{color:var(--red)}.tag{padding:5px 8px;background:#edf1ed;border-radius:8px;font-size:11px;font-weight:700}.empty{text-align:center!important;color:var(--muted);padding:38px}
+.bars{padding:5px 23px 23px;display:grid;gap:14px}.barlabel{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px}.track{height:8px;border-radius:20px;background:#e8ece8;overflow:hidden}.track i{display:block;height:100%;background:#e67d36}
+.modalbg{position:fixed;inset:0;background:#0d201b99;display:none;place-items:center;padding:18px;z-index:5}.modalbg.show{display:grid}.modal{background:var(--paper);width:min(640px,100%);max-height:95vh;overflow:auto;border-radius:22px;padding:28px;position:relative}.close{position:absolute;right:18px;top:13px;border:0;background:none;font-size:28px;cursor:pointer}.modal h2{margin:0}.modal form{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}label{font-size:12px;font-weight:800;display:grid;gap:6px}input,select,textarea{width:100%;padding:12px;border:1px solid #ccd4cd;border-radius:10px;font:inherit}.full,.formactions{grid-column:1/-1}.formactions{display:flex;justify-content:flex-end;gap:9px}
+.mobile{display:none}@media(max-width:900px){.app{display:block}aside{display:none}main{padding-bottom:100px}.mobile{position:fixed;z-index:4;left:12px;right:12px;bottom:10px;display:grid;grid-template-columns:repeat(3,1fr);background:var(--g);padding:7px;border-radius:17px}.mobile button{text-align:center;padding:9px 4px}.mobile button.active{background:#ffffff1b}.grid{grid-template-columns:1fr}}
+@media(max-width:680px){main{padding:24px 14px 100px}header{align-items:start}.actions .secondary{display:none}.kpis{grid-template-columns:1fr}.kpi{min-height:125px}.kpi strong{margin-top:23px}.modal form{grid-template-columns:1fr}.full,.formactions{grid-column:1}.grid{gap:13px}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside><div class="brand"><div class="logo">BF</div>BuildFund</div><nav id="sideNav"><button class="active" data-view="all">▦ Dashboard</button><button data-view="deposit">↓ Deposits</button><button data-view="expense">↑ Expenses</button></nav><div class="project"><small>ACTIVE PROJECT</small><strong>Store Mama Build</strong><span>● In progress</span></div></aside>
+<main><header><div><p class="eyebrow">STORE MAMA / FINANCE</p><h1 id="title">Project overview</h1><p class="sub">Track every peso from deposit to construction expense.</p></div><div class="actions"><button class="btn secondary" onclick="openForm('deposit')">+ Deposit</button><button class="btn primary" onclick="openForm('expense')">+ Add expense</button></div></header>
+<section class="kpis"><article class="kpi deposit"><small>TOTAL DEPOSITS</small><strong id="depTotal">₱0</strong><span id="depCount">0 records</span></article><article class="kpi expense"><small>TOTAL EXPENSES</small><strong id="expTotal">₱0</strong><span id="expCount">0 records</span></article><article class="kpi balance"><small>AVAILABLE BALANCE</small><strong id="balance">₱0</strong><span>Cash remaining</span></article></section>
+<section class="grid"><article class="card"><div class="cardhead"><div><p class="eyebrow">LEDGER</p><h2 id="ledgerTitle">Recent transactions</h2></div><span id="recordCount"></span></div><div class="tablewrap"><table><thead><tr><th>Date</th><th>Details</th><th>Category</th><th>Amount</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></article><article class="card"><div class="cardhead"><div><p class="eyebrow">BREAKDOWN</p><h2>Expenses by category</h2></div></div><div class="bars" id="bars"></div></article></section>
+</main></div>
+<nav class="mobile" id="mobileNav"><button class="active" data-view="all">▦ Dashboard</button><button data-view="deposit">↓ Deposits</button><button data-view="expense">↑ Expenses</button></nav>
+<div class="modalbg" id="modal"><div class="modal"><button class="close" onclick="closeForm()">×</button><p class="eyebrow">NEW TRANSACTION</p><h2 id="formTitle">Add expense</h2><form id="transactionForm"><input type="hidden" name="type" id="type"><label>Date<input required type="date" name="date" id="date"></label><label>Amount (₱)<input required type="number" min="1" step=".01" name="amount"></label><label id="categoryLabel">Category<select name="category"><option>Materials</option><option>Labor</option><option>Equipment</option><option>Transportation</option><option>Permits & Fees</option><option>Utilities</option><option>Food & Allowance</option><option>Subcontractor</option><option>Miscellaneous</option><option>Other</option></select></label><label>Description<input required name="description" placeholder="What is this for?"></label><label>Supplier / Depositor<input required name="party"></label><label>Payment method<select name="payment"><option>Cash</option><option>Bank Transfer</option><option>GCash</option><option>Check</option><option>Other</option></select></label><label class="full">Remarks<textarea name="remarks"></textarea></label><div class="formactions"><button type="button" class="btn secondary" onclick="closeForm()">Cancel</button><button class="btn primary">Save transaction</button></div></form></div></div>
+<script>
+const initial=[
+{id:1,type:"deposit",date:"2026-06-28",amount:100000,description:"Actual deposit",party:"David",remarks:"Received"},
+{id:2,type:"deposit",date:"2026-06-30",amount:50000,description:"Actual deposit",party:"David",remarks:"Received"},
+{id:3,type:"deposit",date:"2026-07-03",amount:30000,description:"Actual deposit",party:"David",remarks:"Received"},
+{id:4,type:"deposit",date:"2026-07-07",amount:50000,description:"Actual deposit",party:"David",remarks:"Received"},
+{id:5,type:"deposit",date:"2026-07-10",amount:20000,description:"Actual deposit",party:"David",remarks:"Received"},
+{id:6,type:"deposit",date:"2026-07-14",amount:120000,description:"Actual deposit",party:"David",remarks:"Received"},
+{id:7,type:"deposit",date:"2026-07-14",amount:20000,description:"Actual deposit",party:"David",remarks:"Received for tiles"},
+{id:8,type:"deposit",date:"2026-07-14",amount:10000,description:"Actual deposit",party:"David",remarks:"Received from Ral"},
+{id:9,type:"deposit",date:"2026-07-24",amount:30000,description:"Actual deposit",party:"David",remarks:"Received"}];
+const cats=["Materials","Labor","Equipment","Transportation","Permits & Fees","Utilities","Food & Allowance","Subcontractor","Miscellaneous","Other"];
+let data=JSON.parse(localStorage.getItem("storeMamaTransactions")||"null")||initial,view="all";
+const peso=n=>new Intl.NumberFormat("en-PH",{style:"currency",currency:"PHP",maximumFractionDigits:0}).format(n);
+const save=()=>localStorage.setItem("storeMamaTransactions",JSON.stringify(data));
+function render(){
+ const deps=data.filter(x=>x.type==="deposit"),exps=data.filter(x=>x.type==="expense"),dt=deps.reduce((s,x)=>s+x.amount,0),et=exps.reduce((s,x)=>s+x.amount,0);
+ depTotal.textContent=peso(dt);expTotal.textContent=peso(et);balance.textContent=peso(dt-et);depCount.textContent=deps.length+" records";expCount.textContent=exps.length+" records";
+ const shown=(view==="all"?data:data.filter(x=>x.type===view)).slice().sort((a,b)=>b.date.localeCompare(a.date)||b.id-a.id);
+ recordCount.textContent=shown.length+" records";ledgerTitle.textContent=view==="deposit"?"Deposit history":view==="expense"?"Expense history":"Recent transactions";
+ title.textContent=view==="deposit"?"Deposits by David":view==="expense"?"Construction expenses":"Project overview";
+ rows.innerHTML=shown.length?shown.map(x=>`<tr><td>${new Date(x.date+"T00:00:00").toLocaleDateString("en-PH",{month:"short",day:"numeric",year:"numeric"})}</td><td><strong>${x.description}</strong><br><small>${x.party}${x.remarks?" · "+x.remarks:""}</small></td><td><span class="tag">${x.category||"Deposit"}</span></td><td class="${x.type==="deposit"?"plus":"minus"}">${x.type==="deposit"?"+":"−"}${peso(x.amount)}</td><td><button class="secondary btn" onclick="removeItem(${x.id})">×</button></td></tr>`).join(""):`<tr><td class="empty" colspan="5">No records yet. Add your first transaction.</td></tr>`;
+ const totals=cats.map(c=>({c,v:exps.filter(x=>x.category===c).reduce((s,x)=>s+x.amount,0)})),max=Math.max(1,...totals.map(x=>x.v));
+ bars.innerHTML=totals.slice(0,7).map(x=>`<div><div class="barlabel"><span>${x.c}</span><strong>${peso(x.v)}</strong></div><div class="track"><i style="width:${x.v/max*100}%"></i></div></div>`).join("");
+}
+function openForm(type){modal.classList.add("show");transactionForm.reset();document.getElementById("type").value=type;date.value=new Date().toISOString().slice(0,10);formTitle.textContent="Add "+type;categoryLabel.style.display=type==="expense"?"grid":"none";if(type==="deposit"){transactionForm.description.value="Actual deposit";transactionForm.party.value="David"}}
+function closeForm(){modal.classList.remove("show")}
+function removeItem(id){if(confirm("Delete this transaction?")){data=data.filter(x=>x.id!==id);save();render()}}
+transactionForm.addEventListener("submit",e=>{e.preventDefault();const f=new FormData(e.target),type=f.get("type");data.push({id:Date.now(),type,date:f.get("date"),amount:Number(f.get("amount")),category:type==="expense"?f.get("category"):null,description:f.get("description"),party:f.get("party"),payment:f.get("payment"),remarks:f.get("remarks")});save();closeForm();render()});
+document.querySelectorAll("[data-view]").forEach(b=>b.onclick=()=>{view=b.dataset.view;document.querySelectorAll("[data-view]").forEach(x=>x.classList.toggle("active",x.dataset.view===view));render()});
+modal.addEventListener("click",e=>{if(e.target===modal)closeForm()});render();
+</script>
+</body>
+</html>
